@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+    ethernode0:
+      container_name: ethernode0
+      hostname: ethernode0
+      extends:
+         file: compose-defaults.yml
+         service: ethernode 
+      command: /usr/bin/geth --rpc --networkid 888 --port 30303 --rpcport 8545 --datadir="/root" -verbosity 6 --ipcapi "admin,eth,debug,miner,net,shh,txpool,personal,web3" --ipcpath "/root/.ethereum/geth.ipc"
+      networks:
+         - ether-net0
+
+    ethernode1:
+      container_name: ethernode1
+      hostname: ethernode1
+      extends:
+         file: compose-defaults.yml
+         service: ethernode 
+      command: /usr/bin/geth --rpc --networkid 888 --port 30303 --rpcport 8545 --datadir="/root" -verbosity 6 --ipcapi "admin,eth,debug,miner,net,shh,txpool,personal,web3" --ipcpath "/root/.ethereum/geth.ipc" 
+      links:
+         - ethernode0 
+      networks:
+         - ether-net0
+
+networks:
+   ether-net0:
+     driver: bridge
+     ipam:
+        driver: default
+        config:
+           - subnet: 10.1.1.0/24
+             ip_range: 10.1.1.128/28
+             gateway: 10.1.1.1
