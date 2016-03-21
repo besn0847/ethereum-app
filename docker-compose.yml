@@ -7,7 +7,6 @@ services:
       extends:
          file: compose-defaults.yml
          service: ethernode 
-      command: /usr/bin/geth --rpc --networkid 888 --port 30303 --rpcport 8545 --datadir="/root" -verbosity 6 --ipcapi "admin,eth,debug,miner,net,shh,txpool,personal,web3" --ipcpath "/root/.ethereum/geth.ipc"
       networks:
          - ether-net0
 
@@ -17,9 +16,40 @@ services:
       extends:
          file: compose-defaults.yml
          service: ethernode 
-      command: /usr/bin/geth --rpc --networkid 888 --port 30303 --rpcport 8545 --datadir="/root" -verbosity 6 --ipcapi "admin,eth,debug,miner,net,shh,txpool,personal,web3" --ipcpath "/root/.ethereum/geth.ipc" 
+      networks:
+         - ether-net0
+
+    ethernode2:
+      container_name: ethernode2
+      hostname: ethernode2
+      extends:
+         file: compose-defaults.yml
+         service: ethernode 
+      networks:
+         - ether-net0
+
+    ethernode3:
+      container_name: ethernode3
+      hostname: ethernode3
+      extends:
+         file: compose-defaults.yml
+         service: ethernode 
+      networks:
+         - ether-net0
+
+    ethermgmt:
+      container_name: ethermgmt
+      hostname: ethermgmt
+      extends:
+         file: compose-defaults.yml
+         service: ethernode 
+      command: sh -c 'sleep 10 && /bootstrap.sh ethernode1 ethernode0 && /bootstrap.sh ethernode2 ethernode0 && /bootstrap.sh ethernode3 ethernode0 && /bootstrap.sh ethernode1 ethernode2 && /bootstrap.sh ethernode1 ethernode3 && /bootstrap.sh ethernode2 ethernode3 && while(true); do sleep 60; done'
+      tty: true
       links:
-         - ethernode0 
+         - ethernode0
+         - ethernode1
+         - ethernode2
+         - ethernode3
       networks:
          - ether-net0
 
