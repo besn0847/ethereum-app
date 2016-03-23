@@ -14,8 +14,7 @@ RUN apt-get update &&\
 
 ADD ethereum/ /root/ethereum/
 
-RUN mkdir /root/.ethereum &&\
-	chmod +x /bootstrap.sh
+RUN mkdir /root/.ethereum
 
 EXPOSE 8545 30303
 
