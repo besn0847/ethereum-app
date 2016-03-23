@@ -12,7 +12,6 @@ RUN apt-get update &&\
         apt-get autoremove &&\
         rm -rf /var/lib/apt/lists/*
 
-ADD bootstrap.sh /
 ADD ethereum/ /root/ethereum/
 
 RUN mkdir /root/.ethereum &&\
