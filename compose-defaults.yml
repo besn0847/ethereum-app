@@ -3,3 +3,5 @@ version: '2'
 services:
    ethernode:
       build : node 
+   ethermgmt:
+      build : mgmt 

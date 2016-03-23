@@ -42,9 +42,11 @@ services:
       hostname: ethermgmt
       extends:
          file: compose-defaults.yml
-         service: ethernode 
-      command: sh -c 'sleep 10 && /bootstrap.sh ethernode1 ethernode0 && /bootstrap.sh ethernode2 ethernode0 && /bootstrap.sh ethernode3 ethernode0 && /bootstrap.sh ethernode1 ethernode2 && /bootstrap.sh ethernode1 ethernode3 && /bootstrap.sh ethernode2 ethernode3 && while(true); do sleep 60; done'
+         service: ethermgmt 
+      command: sh -c 'sleep 10 && /bootstrap.sh ethernode1 ethernode0 && /bootstrap.sh ethernode2 ethernode0 && /bootstrap.sh ethernode3 ethernode0 && /bootstrap.sh ethernode1 ethernode2 && /bootstrap.sh ethernode1 ethernode3 && /bootstrap.sh ethernode2 ethernode3 && cd /root/eth-net-intelligence-api/ && pm2 start app.json && cd /root/eth-netstats && npm start'
       tty: true
+      ports:
+         - "3000:3000"
       links:
          - ethernode0
          - ethernode1
