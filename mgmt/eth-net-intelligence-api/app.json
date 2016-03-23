@@ -11,7 +11,7 @@
     "env":
     {
       "NODE_ENV"    : "production",
-      "RPC_HOST"    : "ethereum0",
+      "RPC_HOST"    : "ethernode0",
       "RPC_PORT"    : "8545",
       "INSTANCE_NAME"   : "myethereum-0",
       "WS_SERVER"     : "http://10.1.1.1:3000",
@@ -30,7 +30,7 @@
     "env":
     {
       "NODE_ENV"    : "production",
-      "RPC_HOST"    : "ethereum1",
+      "RPC_HOST"    : "ethernode1",
       "RPC_PORT"    : "8545",
       "INSTANCE_NAME"   : "myethereum-1",
       "WS_SERVER"     : "http://10.1.1.1:3000",
@@ -49,7 +49,7 @@
     "env":
     {
       "NODE_ENV"    : "production",
-      "RPC_HOST"    : "ethereum2",
+      "RPC_HOST"    : "ethernode2",
       "RPC_PORT"    : "8545",
       "INSTANCE_NAME"   : "myethereum-2",
       "WS_SERVER"     : "http://10.1.1.1:3000",
@@ -68,7 +68,7 @@
     "env":
     {
       "NODE_ENV"    : "production",
-      "RPC_HOST"    : "ethereum3",
+      "RPC_HOST"    : "ethernode3",
       "RPC_PORT"    : "8545",
       "INSTANCE_NAME"   : "myethereum-3",
       "WS_SERVER"     : "http://10.1.1.1:3000",
