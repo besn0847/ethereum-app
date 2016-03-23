@@ -1,0 +1,78 @@
+[
+  {
+    "name"        : "myethereum-0",
+    "cwd"         : ".",
+    "script"      : "app.js",
+    "log_date_format"   : "YYYY-MM-DD HH:mm Z",
+    "merge_logs"    : false,
+    "watch"       : false,
+    "exec_interpreter"  : "node",
+    "exec_mode"     : "fork_mode",
+    "env":
+    {
+      "NODE_ENV"    : "production",
+      "RPC_HOST"    : "ethereum0",
+      "RPC_PORT"    : "8545",
+      "INSTANCE_NAME"   : "myethereum-0",
+      "WS_SERVER"     : "http://10.1.1.1:3000",
+      "WS_SECRET"     : "passw0rd",
+    }
+  },
+  {
+    "name"        : "myethereum-1",
+    "cwd"         : ".",
+    "script"      : "app.js",
+    "log_date_format"   : "YYYY-MM-DD HH:mm Z",
+    "merge_logs"    : false,
+    "watch"       : false,
+    "exec_interpreter"  : "node",
+    "exec_mode"     : "fork_mode",
+    "env":
+    {
+      "NODE_ENV"    : "production",
+      "RPC_HOST"    : "ethereum1",
+      "RPC_PORT"    : "8545",
+      "INSTANCE_NAME"   : "myethereum-1",
+      "WS_SERVER"     : "http://10.1.1.1:3000",
+      "WS_SECRET"     : "passw0rd",
+    }
+  },
+  {
+    "name"        : "myethereum-2",
+    "cwd"         : ".",
+    "script"      : "app.js",
+    "log_date_format"   : "YYYY-MM-DD HH:mm Z",
+    "merge_logs"    : false,
+    "watch"       : false,
+    "exec_interpreter"  : "node",
+    "exec_mode"     : "fork_mode",
+    "env":
+    {
+      "NODE_ENV"    : "production",
+      "RPC_HOST"    : "ethereum2",
+      "RPC_PORT"    : "8545",
+      "INSTANCE_NAME"   : "myethereum-2",
+      "WS_SERVER"     : "http://10.1.1.1:3000",
+      "WS_SECRET"     : "passw0rd",
+    }
+  },
+  {
+    "name"        : "myethereum-3",
+    "cwd"         : ".",
+    "script"      : "app.js",
+    "log_date_format"   : "YYYY-MM-DD HH:mm Z",
+    "merge_logs"    : false,
+    "watch"       : false,
+    "exec_interpreter"  : "node",
+    "exec_mode"     : "fork_mode",
+    "env":
+    {
+      "NODE_ENV"    : "production",
+      "RPC_HOST"    : "ethereum3",
+      "RPC_PORT"    : "8545",
+      "INSTANCE_NAME"   : "myethereum-3",
+      "WS_SERVER"     : "http://10.1.1.1:3000",
+      "WS_SECRET"     : "passw0rd",
+    }
+  },
+]
