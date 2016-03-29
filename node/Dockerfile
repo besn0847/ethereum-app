@@ -7,7 +7,7 @@ RUN apt-get update &&\
 	add-apt-repository -y ppa:ethereum/ethereum-dev &&\
 	apt-get update &&\
         apt-get install -y --force-yes --no-install-recommends \
-                geth vim iputils-ping telnet net-tools curl &&\
+                geth vim iputils-ping telnet net-tools curl solc &&\
         apt-get autoclean &&\
         apt-get autoremove &&\
         rm -rf /var/lib/apt/lists/*
