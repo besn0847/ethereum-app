@@ -1,7 +1,8 @@
 # Tutorial 1 : Transfer funds between Ether accounts
 
 ## Pre-requisites
-First make sure, you have a vanilla environment in place following the procedure [here](https://github.com/besn0847/ethereum-app/blob/master/README.md). You should have 1 Ether accounts (*0xefd51a97214bf1578a8bbfbbcaf641d74fb7c307*) with 100 Ethers loaded onto it if you did not mine at all. But don't worry we will check this.
+First, make sure you have a vanilla environment in place following the procedure [here](https://github.com/besn0847/ethereum-app/blob/master/README.md). You should have 1 Ether account (*0xefd51a97214bf1578a8bbfbbcaf641d74fb7c307*) with 100 Ethers loaded onto it if you did not mine at all yet.
+But don't worry we will check this.
 
 ## Steps covered in the tutorial
 We will perform the following actions in our tutorial :
@@ -18,7 +19,7 @@ We will perform the following actions in our tutorial :
 * Stop Ether mining on node #3 ;
 
 ## Step by step tutorial
-. Step 1 : Create and load a Javascript to check account balance
+**. Step 1 : Create and load a Javascript to check account balance**
 
 		docker exec -ti ethermgmt /bin/bash
 	    # cat > /tmp/gethload.js << EOF
@@ -34,9 +35,9 @@ We will perform the following actions in our tutorial :
         > loadScript("/tmp/gethload.js");
             true
 
-You should see a 'true' return when the script has been loaded.
+You should see a 'true' returned when the script has been loaded.
 
-. Step 2 : Create 3 new Ether accounts and check the balance
+**. Step 2 : Create 3 new Ether accounts and check the balance**
 
 		> personal.newAccount();
 		    Passphrase: passw0rd
@@ -56,20 +57,20 @@ You should see a 'true' return when the script has been loaded.
             eth.accounts[2]: 0x62b733ed73e4713da473baecc67fc2af71adb25b   balance: 0 ether
             undefined
 
-. Step 3 : Set the new coinbase and start mining
+**. Step 3 : Set the new coinbase and start mining**
 
         > miner.setEtherbase(eth.accounts[0]);
             true
         > miner.start(1);
             true
 
-At  this stage the node #0 will start mining and generate some Ether for account #0. Regularly check the balances with the command below and when you have more than 2 Ether, then proceed to next step. On my PC, it took about 5 minutes.
+At  this stage the node #0 will start mining and generate some Ether for account #0. Regularly check the balances with the command below and when you have more than 2 Ether, then proceed to the next step. On my PC, it took about 5 minutes (i started 4 threads in parallel).
 
         > loadScript("/tmp/gethload.js");
 
 Please note that you can also check the web URL of Ethstats (http://localhost:3000) and you can speed up mining by adding more threads (eg. miner.start(4) - this is what i use personally).
 
-. Step 4 : Transfer 2 Ether from #0 to #1
+**. Step 4 : Transfer 2 Ether from #0 to #1**
 
         > loadScript("/tmp/gethload.js");
             eth.accounts[0]: 0x09a3c5e6158f6e35ce07457b6646e67a581de904   balance: 320 ether
@@ -88,7 +89,7 @@ Please note that you can also check the web URL of Ethstats (http://localhost:30
 
 Please note that the transfer may take few seconds since the a block must be mined.
 
-. Step 5 : Transfer 2 Ether from #1 to #2
+**. Step 5 : Transfer 2 Ether from #1 to #2**
 Now we will check how much it costs to transfer 1 Ether. To do so we will transfer 1 Ether from account #1 to #2 and check account #1 balance.
 
         > personal.unlockAccount(eth.accounts[1],"passw0rd");
