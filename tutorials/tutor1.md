@@ -90,6 +90,7 @@ Please note that you can also check the web URL of Ethstats (http://localhost:30
 Please note that the transfer may take few seconds since the a block must be mined.
 
 **. Step 5 : Transfer 2 Ether from #1 to #2**
+
 Now we will check how much it costs to transfer 1 Ether. To do so we will transfer 1 Ether from account #1 to #2 and check account #1 balance.
 
         > personal.unlockAccount(eth.accounts[1],"passw0rd");
