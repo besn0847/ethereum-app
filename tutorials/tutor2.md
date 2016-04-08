@@ -355,7 +355,7 @@ Now we can invoke the contract (make sure your are still mining) :
               transactionHash: "0x6ba9804c5924027bebb3b2aec0783dc441f6e8233a28ccee0fac28462822e981"
             }
 
-To finish, wait for the contract to be mined and rechck the balances
+To finish, wait for the contract to be mined and recheck the balances
 
         >
             Contract mined! Address: 0x23a75fbb505099a33df24cc20e4a19207fcff751
