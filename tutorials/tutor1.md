@@ -66,7 +66,7 @@ You should see a 'true' returned when the script has been loaded.
 
 At  this stage the node #0 will start mining and generate some Ether for account #0. Regularly check the balances with the command below and when you have more than 2 Ether, then proceed to the next step. On my PC, it took about 5 minutes (i started 4 threads in parallel).
 
-        > loadScript("/tmp/gethload.js");
+        > checkAllBalances();
 
 Please note that you can also check the web URL of Ethstats (http://localhost:3000) and you can speed up mining by adding more threads (eg. miner.start(4) - this is what i use personally).
 
